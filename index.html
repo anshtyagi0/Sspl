@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - SSPL</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="loader">
+      <img src="./assets/sspl_logo.png" alt="SSPL Logo" class="logo" />
+    </div>
+
+    <div class="login">
+      <h2>LOGIN</h2>
+      <div class="input-fields">
+        <div class="input-wrapper">
+          <i class="fa fa-envelope"></i>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="abc.sspl@gov.in"
+          />
+        </div>
+        <div class="input-wrapper">
+          <i class="fa fa-key"></i>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="password"
+          />
+          <button class="show" onclick="togglePassword()" type="button">
+            <i class="fa fa-eye-slash show-icon"></i>
+          </button>
+        </div>
+      </div>
+      <button class="login-button" onclick="validateLogin()">Login</button>
+    </div>
+
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>
