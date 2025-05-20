@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #283048, #859398);
+
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.select {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.btn {
+    border: 1px solid black;
+    color: black;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 10px;
+    transition: 0.5s;
+    background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%)
+}
+.heading {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.btn:hover {
+    box-shadow: 0px 0px 7px white;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@media (max-width: 517px){
+    .buttons {
+        flex-direction: column;
+    }
+}

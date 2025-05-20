@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Add Data</title>
+    <link rel="stylesheet" href="../../assets/css/project.css" />
+  </head>
+  <body>
+    <div class="loader">
+      <img src="../../assets/sspl_logo.png" alt="SSPL Logo" class="logo" />
+    </div>
+    <div class="project">
+      <h2>Project</h2>
+      <div class="fields">
+        <div class="input-fields">
+          Project
+          <input type="text" id="project" name="project" list="projectList" />
+          <datalist id="projectList"></datalist>
+          PO No Dt
+          <input type="text" id="po" name="po" />
+          Particulars
+          <input type="text" id="particulars" name="particulars" />
+          Name of Firm
+          <input type="text" id="firm" name="firm" />
+          Rev CA
+          <input type="text" name="revCA" id="revCA" />
+          Rev DCDA
+          <input type="text" name="revDCDA" id="revDCDA" />
+          Cap
+          <input type="text" name="cap" id="cap" />
+          Rev Imported FE
+          <input type="text" name="importedFE" id="importedFE" />
+          Rev Imported RE
+          <input type="text" name="importedRE" id="importedRE" />
+          Project Cars
+          <input type="text" name="projectcars" id="projectcars" />
+        </div>
+        <div class="input-fields">
+          Cap Imported FE
+          <input type="text" name="capimportedFE" id="capimportedFE" />
+          Cap Imported RE
+          <input type="text" name="capimportedRE" id="capimportedRE" />
+          DV/TE No Date
+          <input type="text" name="TEDate" id="TEDate" />
+          Allocation Revenue
+          <input type="text" name="arevenue" id="arevenue" />
+          Cash Assignment
+          <input type="text" name="Cash" id="Cash" />
+          Allocation Capital
+          <input type="text" name="Allocation" id="allocation" />
+        </div>
+      </div>
+      <button class="submit-button" onclick="validateSubmit()">Submit</button>
+    </div>
+    <script src="../../assets/js/project.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Form</title>
+    <link rel="stylesheet" href="./assets/css/add.css" />
+  </head>
+  <body>
+    <div class="loader">
+      <img src="./assets/sspl_logo.png" alt="SSPL Logo" class="logo" />
+    </div>
+    <div class="heading">
+      <h1>Please select form below to add data</h1>
+      <div class="select">
+        <select id="select-menu">
+            <option value="none">None</option>
+            <option value="lp-general">LP General</option>
+            <option value="training">Training</option>
+            <option value="misc">Misc</option>
+            <option value="fellowship">fellowship</option>
+            <option value="import">Import</option>
+            <option value="project">project</option>
+        </select>
+        <button class="btn" onclick="formcheck()">Submit</button>
+      </div>
+    </div>
+
+    <script src="./assets/js/add.js"></script>
+  </body>
+</html>

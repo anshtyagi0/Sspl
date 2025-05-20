@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.loader').style.display = 'none';
         document.querySelector('.login').style.display = 'flex';
     }, 1500);
-    if(getCookie('user') !== '') {
-        location.href='./main.html'
+    if (getCookie('email') || getCookie('email').length > 0) {
+        location.href = './main.html'
     }
 });
 
@@ -26,37 +26,51 @@ function togglePassword() {
 function validateLogin() {
     const email = document.getElementById('email').value;
     const pass = document.getElementById("password").value;
-    if (email=='abc@abc.com' && pass=='123') {
-        createCookie('user', email, 1)
-        location.href='./main.html'
-    } else {
-        alert("login failed.")
-    }
+    const url = 'http://ssplbackend.anshtyagi.com/api/login';
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: email, password: pass })
+    })
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(err => { throw err; });
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.user === "matched") {
+                // Set cookie for 1 hour (1/24 of a day)
+                createCookie("email", email);
+                createCookie("role", data.role);
+                location.href = '/main.html'
+                // Redirect or other logic here
+            } else {
+                alert("Login failed: Invalid credentials.");
+            }
+        })
+        .catch(err => {
+            alert("Login error: " + (err.message || "Unknown error"));
+        });
 }
-function createCookie(name, value, days) {
-    var expires;
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toGMTString();
-    }
-    else {
-        expires = "";
-    }
-    document.cookie = name + "=" + value + expires + "; path=/";
+
+function createCookie(name, value) {
+    const hours = 1;
+    const date = new Date();
+    date.setTime(date.getTime() + (hours * 60 * 60 * 1000)); // convert hours to milliseconds
+    const expires = "; expires=" + date.toUTCString();
+    document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
 }
 
 function getCookie(c_name) {
-    if (document.cookie.length > 0) {
-        c_start = document.cookie.indexOf(c_name + "=");
-        if (c_start != -1) {
-            c_start = c_start + c_name.length + 1;
-            c_end = document.cookie.indexOf(";", c_start);
-            if (c_end == -1) {
-                c_end = document.cookie.length;
-            }
-            return unescape(document.cookie.substring(c_start, c_end));
-        }
+    const nameEQ = c_name + "=";
+    const ca = document.cookie.split(';');
+    for(let i=0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length));
     }
-    return "";
+    return null;
 }
