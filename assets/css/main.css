@@ -13,7 +13,6 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #283048, #859398);
-    overflow: hidden;
 }
 
 .loader {
