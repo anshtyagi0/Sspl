@@ -21,13 +21,13 @@ function formcheck() {
     } else if (select == 'lp-general') {
         location.href = '/form/add/lpgeneral.html';
     } else if (select == 'training') {
-        return;
+        location.href = '/form/add/training.html';
     } else if (select == 'misc') {
-        return;
+        location.href = '/form/add/misc.html';
     } else if (select == 'fellowship') {
-        return;
+        location.href = '/form/add/fellowship.html';
     } else if (select == 'import') {
-        return;
+        location.href = '/form/add/import.html';
     } else if (select == 'project') {
         location.href = '/form/add/project.html';
     } else {

@@ -40,6 +40,7 @@ body {
 }
 .lpgeneral {
     display: none;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -72,5 +73,14 @@ body {
     }
     100% {
         opacity: 1;
+    }
+}
+
+@media (max-width: 517px) {
+    .fields {
+        flex-direction: column;
+    }
+    body {
+        height: 170vh;
     }
 }

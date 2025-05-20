@@ -13,6 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #283048, #859398);
+
 }
 
 .loader {
@@ -63,5 +64,10 @@ body {
     }
     100% {
         opacity: 1;
+    }
+}
+@media (max-width: 517px){
+    .buttons {
+        flex-direction: column;
     }
 }

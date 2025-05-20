@@ -7,22 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
             i.style.display='flex';
         });
     }, 1500);
-    if (getCookie('user') == ' ' || !getCookie('user')) {
+    if (getCookie("email") == ' ' || !getCookie("email")) {
         location.href='/'
     }
 })
 
 function getCookie(c_name) {
-    if (document.cookie.length > 0) {
-        c_start = document.cookie.indexOf(c_name + "=");
-        if (c_start != -1) {
-            c_start = c_start + c_name.length + 1;
-            c_end = document.cookie.indexOf(";", c_start);
-            if (c_end == -1) {
-                c_end = document.cookie.length;
-            }
-            return unescape(document.cookie.substring(c_start, c_end));
-        }
+    const nameEQ = c_name + "=";
+    const ca = document.cookie.split(';');
+    for(let i=0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(nameEQ) === 0) return decodeURIComponent(c.substring(nameEQ.length));
     }
-    return "";
+    return null;
 }
