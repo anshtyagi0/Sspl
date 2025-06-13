@@ -47,7 +47,7 @@ function validateSubmit() {
         "Created_by": email
     };
 
-    fetch("http://localhost:8080/api/add/form", {
+    fetch("https://ssplbackend.anshtyagi.com/api/add/form", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

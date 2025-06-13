@@ -26,7 +26,7 @@ function togglePassword() {
 function validateLogin() {
     const email = document.getElementById('email').value;
     const pass = document.getElementById("password").value;
-    const url = 'http://localhost:8080/api/login';
+    const url = 'https://ssplbackend.anshtyagi.com/api/login';
 
     fetch(url, {
         method: 'POST',
