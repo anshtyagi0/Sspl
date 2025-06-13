@@ -16,20 +16,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function formcheck() {
     let select = document.getElementById('select-menu').value;
+    let sno = document.getElementById('sno').value;
     if (select == 'none') {
         alert('Please select a valid option.')
-    } else if (select == 'lp-general') {
-        location.href = '/form/update/lpgeneral.html';
-    } else if (select == 'training') {
-        location.href = '/form/update/training.html';
-    } else if (select == 'misc') {
-        location.href = '/form/update/misc.html';
-    } else if (select == 'fellowship') {
-        location.href = '/form/update/fellowship.html';
-    } else if (select == 'import') {
-        location.href = '/form/update/import.html';
-    } else if (select == 'project') {
-        location.href = '/form/update/project.html';
+    } else if (!sno || isNaN(sno) || sno < 0) {
+        alert("Please enter a valid SNo.")
+    } else if (select == 'lp-general' && sno) {
+        location.href = `/form/update/lpgeneral.html?sno=${sno}`;
+    } else if (select == 'training' && sno) {
+        location.href = `/form/update/training.html?sno=${sno}`;
+    } else if (select == 'misc' && sno) {
+        location.href = `/form/update/misc.html?sno=${sno}`;
+    } else if (select == 'fellowship' && sno) {
+        location.href = `/form/update/fellowship.html?sno=${sno}`;
+    } else if (select == 'import' && sno) {
+        location.href = `/form/update/import.html?sno=${sno}`;
+    } else if (select == 'project' && sno) {
+        location.href = `/form/update/project.html?sno=${sno}`;
     } else {
         alert('Please select a valid option.')
     }
