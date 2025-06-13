@@ -63,8 +63,7 @@ function createCookie(name, value) {
     const date = new Date();
     date.setTime(date.getTime() + (hours * 60 * 60 * 1000)); // convert hours to milliseconds
     const expires = "; expires=" + date.toUTCString();
-    const secure = "; Secure";
-    document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/" + secure;
+    document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
 }
 
 function getCookie(c_name) {
