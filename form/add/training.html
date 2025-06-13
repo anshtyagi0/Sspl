@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Training Add Data</title>
+    <link rel="stylesheet" href="../../assets/css/training.css" />
+  </head>
+  <body>
+    <div class="loader">
+      <img src="../../assets/sspl_logo.png" alt="SSPL Logo" class="logo" />
+    </div>
+    <div class="training">
+      <h2>Training</h2>
+      <div class="fields">
+        <div class="input-fields">
+          CB No Particulars
+          <input type="text" id="cb" name="cb" />
+          Rev CA
+          <input type="text" name="revCA" id="revCA" />
+          Rev DCDA
+          <input type="text" name="revDCDA" id="revDCDA" />
+          CEP
+          <input type="text" name="cep" id="cep" />
+          Reg Fee Sem/Symp/Conl/Course
+          <input type="text" name="regfee" id="regfee" />
+          Course Fee
+          <input type="text" name="coursefee" id="coursefee" />
+          Higher Edu RT
+          <input type="text" name="highereduRT" id="highereduRT" />
+          Higher Edu Dir Power
+          <input type="text" name="higheredudirpower" id="higheredudirpower" />
+          Higher Edu PhD
+          <input type="text" name="highereduphd" id="highereduphd" />
+          Course by Lab(non CEP)
+          <input type="text" name="coursebylab" id="coursebylab" />
+        </div>
+        <div class="input-fields">
+          others
+          <input type="text" name="others" id="others">
+          Cheque No DV No
+          <input type="text" name="cndn" id="chequeNoDVNo">
+          Remarks
+          <input type="text" name="Remarks" id="Remarks">
+          Allocation
+          <input type="text" name="Allocation" id="allocation" />
+        </div>
+      </div>
+      <button class="submit-button" onclick="validateSubmit()">Submit</button>
+    </div>
+    <script src="../../assets/js/training.js"></script>
+  </body>
+</html>

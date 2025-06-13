@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (getCookie("email") == ' ' || !getCookie("email")) {
         location.href = '/'
     }
-    let url = 'https://ssplbackend.anshtyagi.com/api/projects'
+    let url = 'http://localhost:8080/api/projects'
     fetch(url).then(response => {
         if (!response.ok) throw new Error("Network response was not ok");
         return response.json();
@@ -73,7 +73,7 @@ function validateSubmit() {
         "Allocation_Capital": AllocationCapital,
         "Created_by": email
     }
-     fetch("https://ssplbackend.anshtyagi.com/api/add/form", {
+     fetch("http://localhost:8080/api/add/form", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

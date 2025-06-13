@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fellowship Add Data</title>
+    <link rel="stylesheet" href="../../assets/css/fellowship.css" />
+  </head>
+  <body>
+    <div class="loader">
+      <img src="../../assets/sspl_logo.png" alt="SSPL Logo" class="logo" />
+    </div>
+    <div class="fellowship">
+      <h2>Fellowship</h2>
+      <div class="fields">
+        <div class="input-fields">
+          CB No Particulars
+          <input type="text" id="cb" name="cb" />
+          CA
+          <input type="text" id="revCA" name="revCA" />
+          DCDA
+          <input type="text" id="revDCDA" name="revDCDA" />
+          DV No Cheque No
+          <input type="text" id="chequeNoDVNo" name="chequeNoDVNo">
+          Remarks
+          <input type="text" name="Remarks" id="Remarks">
+          Allocation
+          <input type="text" name="Allocation" id="Allocation">
+        </div>
+      </div>
+      <button class="submit-button" onclick="validateSubmit()">Submit</button>
+    </div>
+    <script src="../../assets/js/fellowship.js"></script>
+  </body>
+</html>

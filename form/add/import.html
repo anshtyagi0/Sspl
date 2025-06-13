@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Import Add Data</title>
+    <link rel="stylesheet" href="../../assets/css/import.css" />
+  </head>
+  <body>
+    <div class="loader">
+      <img src="../../assets/sspl_logo.png" alt="SSPL Logo" class="logo" />
+    </div>
+    <div class="import">
+      <h2>Import</h2>
+      <div class="fields">
+        <div class="input-fields">
+          PO No And Dt
+          <input type="text" id="PONoAndDt" name="PONoAndDt" />
+          Particulars
+          <input type="text" id="Particulars" name="Particulars" />
+          Supply Agency
+          <input type="text" id="SupplyAgency" name="SupplyAgency" />
+          Rev Imported FE
+          <input type="text" name="importedFE" id="importedFE" />
+          Rev Imported RE
+          <input type="text" name="importedRE" id="importedRE" />
+          Cap Imported FE
+          <input type="text" name="CapimportedFE" id="CapimportedFE" />
+          Cap Imported RE
+          <input type="text" name="CapimportedRE" id="CapimportedRE" />
+          Rev DCDA
+          <input type="text" name="revDCDA" id="revDCDA" />
+        </div>
+        <div class="input-fields">
+          Cap DCDA
+          <input type="text" name="capDCDA" id="capDCDA" />
+          DV_TE No
+          <input type="text" name="DV_TENo" id="DV_TENo" />
+          Remarks
+          <input type="text" name="Remarks" id="Remarks" />
+        </div>
+      </div>
+      <button class="submit-button" onclick="validateSubmit()">Submit</button>
+    </div>
+    <script src="../../assets/js/import.js"></script>
+  </body>
+</html>

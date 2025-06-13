@@ -57,7 +57,7 @@ function validateSubmit() {
         "Allocation_Capital": AllocationCapital,
         "Created_by": email
     }
-     fetch("https://ssplbackend.anshtyagi.com/api/add/form", {
+     fetch("http://localhost:8080/api/add/form", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
