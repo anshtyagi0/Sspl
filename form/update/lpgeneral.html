@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LG General Add Data</title>
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../assets/css/lpgeneral.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <button class="backbtn" onclick="back()">Back &leftarrow;</button>
+      <button class="signout" onclick="signout()">Sign Out</button>
+    </nav>
+    <div class="lpgeneral">
+      <h2>LP General</h2>
+      <div class="fields">
+        <div class="input-fields">
+          S No
+          <input type="number" name="sno" id="sno" value="" disabled/>
+          CB No Particulars
+          <input type="text" id="cb" name="cb" />
+          Rev CA
+          <input type="text" id="revCA" name="revCA" />
+          Rev DCDA
+          <input type="text" id="revDCDA" name="revDCDA" />
+          Cap
+          <input type="text" name="Cap" id="cap" />
+          Proj Task
+          <input type="text" name="Projtask" id="Projtask" />
+          Build UP
+          <input type="text" name="buildup" id="buildup" />
+          Maint
+          <input type="text" name="Maint" id="Maint" />
+          Tpt Maint Hiring FOL
+          <input type="text" name="tptmainthiring" id="tptmainthiring" />
+          Books Journal
+          <input type="text" name="Bookjournal" id="Bookjournal" />
+        </div>
+        <div class="input-fields">
+          Info Tech
+          <input type="text" name="infotech" id="infotech" />
+          DGSD
+          <input type="text" name="DGSD" id="DGSD" />
+          others
+          <input type="text" name="others" id="others" />
+          Cheque No DV No
+          <input type="text" name="cndn" id="chequeNoDVNo" />
+          Remarks
+          <input type="text" name="Remarks" id="Remarks" />
+          Allocation Revenue
+          <input type="text" name="arevenue" id="arevenue" />
+          Cash Assignment
+          <input type="text" name="Cash" id="Cash" />
+          Allocation Capital
+          <input type="text" name="Allocation" id="allocation" />
+        </div>
+      </div>
+      <button class="submit-button" onclick="validateSubmit()">Submit</button>
+    </div>
+    <script src="../../assets/js/update/lpgeneral.js"></script>
+  </body>
+</html>
