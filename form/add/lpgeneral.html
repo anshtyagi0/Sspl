@@ -4,16 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LG General Add Data</title>
+    <link rel="stylesheet" href="../../assets/css/main.css" />
     <link rel="stylesheet" href="../../assets/css/lpgeneral.css" />
   </head>
   <body>
-    <div class="loader">
-      <img src="../../assets/sspl_logo.png" alt="SSPL Logo" class="logo" />
-    </div>
+    <nav class="nav">
+      <button class="backbtn" onclick="back()">Back &leftarrow;</button>
+      <button class="signout" onclick="signout()">Sign Out</button>
+    </nav>
     <div class="lpgeneral">
       <h2>LP General</h2>
       <div class="fields">
         <div class="input-fields">
+          S No
+          <input type="number" name="sno" id="sno" value="" disabled/>
           CB No Particulars
           <input type="text" id="cb" name="cb" />
           Rev CA
@@ -35,21 +39,21 @@
         </div>
         <div class="input-fields">
           Info Tech
-          <input type="text" name="infotech" id="infotech">
+          <input type="text" name="infotech" id="infotech" />
           DGSD
-          <input type="text" name="DGSD" id="DGSD">
+          <input type="text" name="DGSD" id="DGSD" />
           others
-          <input type="text" name="others" id="others">
+          <input type="text" name="others" id="others" />
           Cheque No DV No
-          <input type="text" name="cndn" id="chequeNoDVNo">
+          <input type="text" name="cndn" id="chequeNoDVNo" />
           Remarks
-          <input type="text" name="Remarks" id="Remarks">
+          <input type="text" name="Remarks" id="Remarks" />
           Allocation Revenue
-          <input type="text" name="arevenue" id="arevenue">
+          <input type="text" name="arevenue" id="arevenue" />
           Cash Assignment
-          <input type="text" name="Cash" id="Cash">
+          <input type="text" name="Cash" id="Cash" />
           Allocation Capital
-          <input type="text" name="Allocation" id="allocation">
+          <input type="text" name="Allocation" id="allocation" />
         </div>
       </div>
       <button class="submit-button" onclick="validateSubmit()">Submit</button>

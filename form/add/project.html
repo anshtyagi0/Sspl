@@ -4,16 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project Add Data</title>
+    <link rel="stylesheet" href="../../assets/css/main.css" />
     <link rel="stylesheet" href="../../assets/css/project.css" />
   </head>
   <body>
-    <div class="loader">
-      <img src="../../assets/sspl_logo.png" alt="SSPL Logo" class="logo" />
-    </div>
+    <nav class="nav">
+      <button class="backbtn" onclick="back()">Back &leftarrow;</button>
+      <button class="signout" onclick="signout()">Sign Out</button>
+    </nav>
     <div class="project">
       <h2>Project</h2>
       <div class="fields">
         <div class="input-fields">
+          S No
+          <input type="number" name="sno" id="sno" value="" disabled/>
           Project
           <input type="text" id="project" name="project" list="projectList" />
           <datalist id="projectList"></datalist>

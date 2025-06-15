@@ -1,23 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        document.querySelector('.loader').style.display = 'none';
-        let a = document.querySelectorAll('.buttons');
-        document.querySelector('.import').style.display = 'flex';
-        a.forEach(i => {
-            i.style.display = 'flex';
-        });
-    }, 1500);
+
+    document.querySelector('.nav').style.display = 'flex'
+    let a = document.querySelectorAll('.buttons');
+    document.querySelector('.import').style.display = 'flex';
+    a.forEach(i => {
+        i.style.display = 'flex';
+    });
+
     if (getCookie('email') == ' ' || !getCookie('email')) {
         location.href = '/'
     }
+    let formname = 'import';
+    fetch(`https://ssplbackend.anshtyagi.com/api/sno/${formname}`).then(response => {
+        if (!response.ok) {
+            return response.text().then(err => { throw new Error(err); });
+        }
+        return response.text();
+    }).then(sno => {
+        document.getElementById('sno').value = parseInt(sno);
+    }).catch(error => {
+        console.error('Error fetching sno:', error.message);
+    });
 })
+function back() {
+    window.history.back();
+}
+function signout() {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const eqPos = cookie.indexOf("=");
+        const name = eqPos > -1 ? cookie.substring(0, eqPos).trim() : cookie.trim();
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+    location.href = '/';
+}
 
 function validateSubmit() {
     let formname = 'import';
 
     let PONoAndDt = document.getElementById('PONoAndDt').value;
     if (!PONoAndDt || PONoAndDt.trim() === '') return alert('Please enter PO No and Date.');
-
+    let sno = document.getElementById('sno').value;
+    if (!sno) {
+        sno = Number(prompt('I was unable to get SNo. Please enter it manually', '0'));
+    }
     let Particulars = document.getElementById('Particulars').value;
     let SupplyAgency = document.getElementById('SupplyAgency').value;
     let importedFE = document.getElementById('importedFE').value;
@@ -33,6 +60,7 @@ function validateSubmit() {
     if (!email) return alert("Please refresh as session expired or not logged in.");
 
     let formdata = {
+        "SNo": sno,
         "PO_No_And_Date": PONoAndDt,
         "Particulars": Particulars,
         "Supply_Agency": SupplyAgency,
