@@ -3,24 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Select Form</title>
+    <title>Admin</title>
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body>
-    <div class="loader">
-      <img src="./assets/sspl_logo.png" alt="SSPL Logo" class="logo" />
-    </div>
     <nav class="nav">
+      <button class="backbtn" onclick="back()">Back &leftarrow;</button>
       <button class="signout" onclick="signout()">Sign Out</button>
     </nav>
     <div class="heading">
       <h1>Please select appropriate option</h1>
       <div class="buttons">
-        <a class="btn" href="/form.html">Form</a
-        ><a class="btn" href="/report.html">Report</a>
-        <a href="/admin.html" id="adminbtn" class="btn" style="display: none;">Admin</a>
+        <a class="btn" href="/form/admin/user.html">User Add/Delete</a>
+        <a class="btn" href="/form/admin/deleteRecord.html">Delete Record</a>
       </div>
     </div>
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/admin/admin.js"></script>
   </body>
 </html>

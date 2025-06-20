@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Add/Delete</title>
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../assets/css/admin/user.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <button class="backbtn" onclick="back()">Back &leftarrow;</button>
+      <button class="signout" onclick="signout()">Sign Out</button>
+    </nav>
+    <div class="user">
+      <h2>User</h2>
+      <div class="fields">
+        <div class="input-fields">
+          Select Action
+          <select name="action" id="action">
+            <option value="none">None</option>
+            <option value="add">Add new user</option>
+            <option value="delete">Delete user</option>
+          </select>
+          <p id="role-head" style="display: none;">Select Role for User</p>
+          <select name="role" style="display: none;" id="role">
+            <option value="none">None</option>
+            <option value="admin">Admin</option>
+            <option value="primary">Primary</option>
+          </select>
+        </div>
+        <div class="input-fields">
+          <p id="email-head" style="display: none;">Email</p>
+          <div style="display: none;" class="input-wrapper" id="email-wrapper">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="abc.sspl@gov.in"
+            />
+          </div>
+          <p style="display: none;" id="pass-head">Password</p>
+          <div style="display: none;" class="input-wrapper" id="pass-wrapper">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="password"
+            />
+            <button class="show" onclick="togglePassword()" type="button">
+              <i class="show-icon">🙈</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <button class="submit-button" onclick="validateSubmit()">
+        Submit
+      </button>
+    </div>
+    <script src="../../assets/js/admin/user.js"></script>
+  </body>
+</html>

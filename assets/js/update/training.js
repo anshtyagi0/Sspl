@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const response = await fetch(`https://ssplbackend.anshtyagi.com/api/formfetch?sno=${sno}&table=training`);
+        const response = await fetch(`http://localhost:8080/api/formfetch?sno=${sno}&table=training`);
         if (!response.ok) throw new Error('Failed to fetch data');
 
         const data = await response.json();
@@ -103,7 +103,7 @@ function validateSubmit() {
         "Created_by": email
     };
 
-    fetch("https://ssplbackend.anshtyagi.com/api/formupdate", {
+    fetch("http://localhost:8080/api/formupdate", {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",

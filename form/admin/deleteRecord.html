@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Record</title>
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <link rel="stylesheet" href="../../assets/css/admin/deleteRecord.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <button class="backbtn" onclick="back()">Back &leftarrow;</button>
+      <button class="signout" onclick="signout()">Sign Out</button>
+    </nav>
+    <div class="deleteRecord">
+      <h2>Delete Record</h2>
+      <div class="fields">
+        <div class="input-fields">
+          Select Form
+          <select name="form" id="form">
+            <option value="none">None</option>
+            <option value="lpgeneral">LP General</option>
+            <option value="training">Training</option>
+            <option value="miscellaneous">Misc</option>
+            <option value="fellowship">fellowship</option>
+            <option value="import">Import</option>
+            <option value="project">project</option>
+          </select>
+        </div>
+        <div class="input-fields">
+          S No
+          <input type="number" name="sno" id="sno" />
+        </div>
+      </div>
+      <button class="submit-button" onclick="validateSubmit()">Submit</button>
+    </div>
+    <script src="../../assets/js/admin/deleteRecord.js"></script>
+  </body>
+</html>

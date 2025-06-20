@@ -1,26 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        document.querySelector('.loader').style.display = 'none';
-        let a = document.querySelectorAll('.buttons');
-        document.querySelector('.heading').style.display = 'flex';
-        document.querySelector('.nav').style.display = 'flex';
-        a.forEach(i => {
-            i.style.display = 'flex';
-        });
-        fetch("http://localhost:8080/api/check-role", {
-            method: "POST",
-            headers: {
-                "email": getCookie("email")
-            }
-        }).then((res) => res.json())
+    fetch("http://localhost:8080/api/check-role", {
+        method: "POST",
+        headers: {
+            "email": getCookie("email")
+        }
+    }).then((res) => res.json())
         .then((data) => {
-            if (data.role == "admin") {
-                document.getElementById("adminbtn").style.display='block';
+            if (data.role != "admin") {
+                location.href = '/';
             }
         }).catch((err) => {
             console.error(err);
         })
-    }, 1500);
+    let a = document.querySelectorAll('.buttons');
+    document.querySelector('.heading').style.display = 'flex';
+    document.querySelector('.nav').style.display = 'flex';
+    a.forEach(i => {
+        i.style.display = 'flex';
+    });
     if (getCookie("email") == ' ' || !getCookie("email")) {
         location.href = '/'
     }

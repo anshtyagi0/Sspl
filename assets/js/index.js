@@ -14,19 +14,17 @@ function togglePassword() {
 
     if (passwordInput.type === 'password') {
         passwordInput.type = 'text';
-        icon.classList.remove('fa-eye-slash');
-        icon.classList.add('fa-eye');
+        icon.innerHTML='🐵';;
     } else {
         passwordInput.type = 'password';
-        icon.classList.remove('fa-eye');
-        icon.classList.add('fa-eye-slash');
+        icon.innerHTML='🙈'
     }
 }
 
 function validateLogin() {
     const email = document.getElementById('email').value;
     const pass = document.getElementById("password").value;
-    const url = 'https://ssplbackend.anshtyagi.com/api/login';
+    const url = 'http://localhost:8080/api/login';
     // am
     fetch(url, {
         method: 'POST',

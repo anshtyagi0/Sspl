@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Report - Get Form Data</title>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/report.css" />
+    <script src="./assets/js/excel/xlsx.full.min.js"></script>
+    <script src="./assets/js/pdf/jspdf.umd.min.js"></script>
+    <script src="./assets/js/pdf/jspdf.plugin.autotable.min.js"></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <button class="backbtn" onclick="back()">Back &leftarrow;</button>
+      <button class="signout" onclick="signout()">Sign Out</button>
+    </nav>
+    <h2 class="heading">Fetch Form Data</h2>
+    <select id="tableSelect">
+      <option value="">-- Select Table --</option>
+      <option value="lpgeneral">LP General</option>
+      <option value="training">Training</option>
+      <option value="miscellaneous">Misc</option>
+      <option value="fellowship">Fellowship</option>
+      <option value="import">Import</option>
+      <option value="project">Project</option>
+    </select>
+
+    <div id="projectSelectContainer" style="display: none">
+      <label for="projectName">Select Project:</label>
+      <select id="projectName">
+        <option value="">-- Select Project --</option>
+      </select>
+    </div>
+
+    <button class="btn" onclick="fetchTableData()">Submit</button>
+    <button class="btn" onclick="downloadExcel()">Download Excel</button>
+    <button class="btn" onclick="downloadPDF()">Download PDF</button>
+
+    <div class="table-container" id="tableWrapper">
+      <table id="myTable">
+      </table>
+    </div>
+    <script src="./assets/js/report.js"></script>
+  </body>
+</html>

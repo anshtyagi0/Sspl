@@ -1,0 +1,28 @@
+table,
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    min-width: 100%;
+    width: max-content;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px 16px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+th {
+    background-color: #ddd;
+}
+
+select {
+    margin: 10px;
+}

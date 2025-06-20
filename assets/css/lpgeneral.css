@@ -6,6 +6,9 @@
     justify-content: center;
     gap: 30px;
 }
+/* body {
+    height: 100vh;
+} */
 
 @media (max-width: 517px) {
     body {
