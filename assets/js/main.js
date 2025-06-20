@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         a.forEach(i => {
             i.style.display = 'flex';
         });
-        fetch("http://localhost:8080/api/check-role", {
+        fetch("https://ssplbackend.anshtyagi.com/api/check-role", {
             method: "POST",
             headers: {
                 "email": getCookie("email")

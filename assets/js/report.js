@@ -131,7 +131,7 @@ tableSelect.addEventListener('change', function () {
 });
 
 function loadProjects() {
-    fetch('http://localhost:8080/api/projectlist')
+    fetch('https://ssplbackend.anshtyagi.com/api/projectlist')
         .then(response => {
             if (!response.ok) throw new Error("Network response was not ok");
             return response.json();
@@ -165,7 +165,7 @@ async function fetchTableData() {
     }
 
     try {
-        const response = await fetch("http://localhost:8080/api/formfetchall", {
+        const response = await fetch("https://ssplbackend.anshtyagi.com/api/formfetchall", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: payload

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch("http://localhost:8080/api/check-role", {
+    fetch("https://ssplbackend.anshtyagi.com/api/check-role", {
         method: "POST",
         headers: {
             "email": getCookie("email")
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function validateSubmit() {
     let formname = document.getElementById("form").value;
-    let res = await fetch("http://localhost:8080/api/check-role", {
+    let res = await fetch("https://ssplbackend.anshtyagi.com/api/check-role", {
         method: "POST",
         headers: {
             "email": getCookie("email")
@@ -37,7 +37,7 @@ async function validateSubmit() {
         let useremail = getCookie("email");
         let sno = document.getElementById("sno").value;
         if (!sno || sno == 0 || sno < 0 ) return alert("Please enter valid Sno.")
-        fetch("http://localhost:8080/api/delete-record", {
+        fetch("https://ssplbackend.anshtyagi.com/api/delete-record", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

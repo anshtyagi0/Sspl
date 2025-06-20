@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (getCookie("email") == ' ' || !getCookie("email")) {
         location.href = '/'
     }
-    let url = 'http://localhost:8080/api/projectlist'
+    let url = 'https://ssplbackend.anshtyagi.com/api/projectlist'
     fetch(url).then(response => {
         if (!response.ok) throw new Error("Network response was not ok");
         return response.json();
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Error while fetching projectlist: ' + error)
         });
     let formname = 'project';
-    fetch(`http://localhost:8080/api/sno/${formname}`).then(response => {
+    fetch(`https://ssplbackend.anshtyagi.com/api/sno/${formname}`).then(response => {
         if (!response.ok) {
             return response.text().then(err => { throw new Error(err); });
         }
@@ -101,7 +101,7 @@ function validateSubmit() {
         "Allocation_Capital": AllocationCapital,
         "Created_by": email
     }
-    fetch("http://localhost:8080/api/add/form", {
+    fetch("https://ssplbackend.anshtyagi.com/api/add/form", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

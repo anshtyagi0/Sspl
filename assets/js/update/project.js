@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         alert('S No not provided in URL');
         return;
     }
-    let url = 'http://localhost:8080/api/projectlist'
+    let url = 'https://ssplbackend.anshtyagi.com/api/projectlist'
     fetch(url).then(response => {
         if (!response.ok) throw new Error("Network response was not ok");
         return response.json();
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             alert('Error while fetching projectlist: ' + error)
         });
     try {
-        const response = await fetch(`http://localhost:8080/api/formfetch?sno=${sno}&table=project`);
+        const response = await fetch(`https://ssplbackend.anshtyagi.com/api/formfetch?sno=${sno}&table=project`);
         if (!response.ok) throw new Error('Failed to fetch data');
 
         const data = await response.json();
@@ -127,7 +127,7 @@ function validateSubmit() {
         "Created_by": email
     };
 
-    fetch("http://localhost:8080/api/formupdate", {
+    fetch("https://ssplbackend.anshtyagi.com/api/formupdate", {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",

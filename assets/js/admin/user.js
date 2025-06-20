@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch("http://localhost:8080/api/check-role", {
+    fetch("https://ssplbackend.anshtyagi.com/api/check-role", {
         method: "POST",
         headers: {
             "email": getCookie("email")
@@ -60,7 +60,7 @@ action.addEventListener('change', function () {
 });
 
 async function validateSubmit() {
-    let res = await fetch("http://localhost:8080/api/check-role", {
+    let res = await fetch("https://ssplbackend.anshtyagi.com/api/check-role", {
         method: "POST",
         headers: {
             "email": getCookie("email")
@@ -79,7 +79,7 @@ async function validateSubmit() {
             let email = document.getElementById('email').value;
             let password = document.getElementById('password').value;
             if (email && password) {
-                fetch(`http://localhost:8080/api/user-exists?email=${email}`)
+                fetch(`https://ssplbackend.anshtyagi.com/api/user-exists?email=${email}`)
                     .then(res => res.json())
                     .then(data => {
                         if (data.exists) {
@@ -87,7 +87,7 @@ async function validateSubmit() {
                         } else {
                             let conf = confirm("Are you sure you want create this user?")
                             if (conf) {
-                                fetch("http://localhost:8080/api/create-user", {
+                                fetch("https://ssplbackend.anshtyagi.com/api/create-user", {
                                     method: "POST",
                                     headers: {
                                         "Content-Type": "application/json",
@@ -121,7 +121,7 @@ async function validateSubmit() {
     } else if (action.value == 'delete') {
         let email = document.getElementById('email').value;
         if (email) {
-            fetch(`http://localhost:8080/api/user-exists?email=${email}`)
+            fetch(`https://ssplbackend.anshtyagi.com/api/user-exists?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     if (!data.exists) {
@@ -129,7 +129,7 @@ async function validateSubmit() {
                     } else {
                         let conf = confirm("Are you sure you want delete this user?")
                         if (conf) {
-                            fetch("http://localhost:8080/api/delete-user", {
+                            fetch("https://ssplbackend.anshtyagi.com/api/delete-user", {
                                 method: "POST",
                                 headers: {
                                     "Content-Type": "application/json",
